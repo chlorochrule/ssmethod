@@ -16,7 +16,7 @@ setup(
     long_description=readme,
     author='Naoto MINAMI',
     author_email='minami.polly@gmail.com',
-    install_requires=['numpy', 'scipy', 'sklearn'],
+    install_requires=['numpy', 'sklearn', 'lpproj'],
     url='https://github.com/chlorochrule/ssmethod',
     license=license,
     packages=find_packages(exclude=('tests', 'examples'))
