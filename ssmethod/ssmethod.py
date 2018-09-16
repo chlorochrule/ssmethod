@@ -109,6 +109,7 @@ class SubspaceClassifier():
         pred : array-like, shape = [n_samples]
             The predicted labels.
         """
+        # TODO: enable ensemble
         X = check_array(X)
 
         UX = np.dot(self.bases, X.T)
