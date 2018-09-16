@@ -32,6 +32,11 @@ class SubspaceClassifier():
     basis_func : function, optional (default=None)
         The customized method to calculate components of each class. This 
         option is valid only `basis_type='custom'`.
+
+    Attributes
+    ----------
+    accuracy_ : array, shape = [n_samples]
+        The accuracy of prediction.
     """ 
     def __init__(self, n_components, n_estimators=1, max_bases=None,
                  basis_type='pca', basis_func=None):
@@ -95,6 +100,14 @@ class SubspaceClassifier():
         ----------
         X : array-like, shape = [n_samples, n_features]
             The input predictors. 
+
+        y : array-like, shape = [n_samples]
+            The answer labels.
+
+        Returens
+        --------
+        pred : array-like, shape = [n_samples]
+            The predicted labels.
         """
         X = check_array(X)
 
