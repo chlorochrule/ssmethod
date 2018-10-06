@@ -113,14 +113,13 @@ class SubspaceClassifier():
         # TODO: enable ensemble
         X = check_array(X)
 
-        UX = np.dot(self.bases, X.T)
-        UX2_sum = np.sum(UX ** 2, axis=1)
-        y_ = np.argmax(UX2_sum, axis=0)
-        pred = self.label_encoder.inverse_transform(y_)
+        ux = np.dot(self.bases, X.T)
+        ux2sum = np.sum(ux ** 2, axis=1)
+        y_ = np.argmax(ux2sum, axis=0)
         if y is not None:
             y = self.label_encoder.transform(y)
             self.accuracy_ = np.sum(y==pred) / pred.shape[0]
         else:
             self.accuracy_ = None
+        pred = self.label_encoder.inverse_transform(y_)
         return pred
-        
