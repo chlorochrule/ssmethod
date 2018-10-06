@@ -118,7 +118,7 @@ class SubspaceClassifier():
         y_ = np.argmax(ux2sum, axis=0)
         if y is not None:
             y = self.label_encoder.transform(y)
-            self.accuracy_ = np.sum(y==pred) / pred.shape[0]
+            self.accuracy_ = np.sum(y==y_) / y.shape[0]
         else:
             self.accuracy_ = None
         pred = self.label_encoder.inverse_transform(y_)
