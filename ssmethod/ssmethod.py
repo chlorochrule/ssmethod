@@ -35,8 +35,9 @@ class SubspaceClassifier():
 
     Attributes
     ----------
-    accuracy_ : array, shape = [n_samples]
-        The accuracy of prediction.
+    accuracy_ : float (or None)
+        The accuracy of prediction. If the `predict` method does not get 
+        `y` parameter, `accuracy_` is None.
     """ 
     def __init__(self, n_components, n_estimators=1, max_bases=None,
                  basis_type='pca', basis_func=None):
